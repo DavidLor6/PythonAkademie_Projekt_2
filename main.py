@@ -21,13 +21,13 @@ def generuj_cislo():
         generuj_cislo()
 
 def hrat_hru():
-    # global pocet_pokusu
+    # ??? global pocet_pokusu
     pocet_pokusu =+ 1
     cows = 0
     bulls = 0
     pokus = input(">>> ")
-    zvolene_cislo = int(pokus)
-
+    if len(pokus) != 4 or len(pokus) > len(set(pokus)) or int(pokus[0]) == 0:
+        print("Wrong input! Your number has to have 4 digit, each digit has to be different and cannot start with 0")
 
 
 
