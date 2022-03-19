@@ -13,14 +13,23 @@ pocet_pokusu = []
 
 # vytvoreni hadaneho cisla
 def generuj_cislo():
-    for i in range(4):
-        x = random.randrange(0, 9)
-        cislo.append(x)
-    if len(cislo) > len(set(cislo)):
+    for number in range(4):
+        number = random.randrange(0, 9)
+        cislo.append(number)
+    if len(cislo) > len(set(cislo)) or cislo[0] == 0:
         cislo.clear()
         generuj_cislo()
 
-print(cislo)
+def hrat_hru():
+    # global pocet_pokusu
+    pocet_pokusu =+ 1
+    cows = 0
+    bulls = 0
+    pokus = input(">>> ")
+    zvolene_cislo = int(pokus)
+
+
+
 
 # Zacatek programu
 print(
@@ -30,4 +39,5 @@ print(
     "\n" + "Let's play a bulls and cows game."
     "\n" + oddelovac
 )
-
+print("Enter a number: .... (4 digit, each digit has to be different, cannot start with 0)")
+hrat_hru()
