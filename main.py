@@ -8,9 +8,6 @@ oddelovac = "-" * 47
 cislo = []
 pocet_pokusu = []
 
-# bulls = 0    # uhodnute cislo i umisteni
-# cows = 0     # uhodnute pouze cislo, ne umisteni
-
 # vytvoreni hadaneho cisla
 def generuj_cislo():
     for number in range(4):
@@ -20,21 +17,11 @@ def generuj_cislo():
         cislo.clear()
         generuj_cislo()
 
-# Zacatek programu
-print(
-    "Hi there!" +
-    "\n" + oddelovac +
-    "\n" + "I've generated a random 4 digit number for you." +
-    "\n" + "Let's play a bulls and cows game."
-    "\n" + oddelovac
-)
-print("Enter a number: .... (4 digit, each digit has to be different, cannot start with 0)")
-
 def hrat_hru():
     global pocet_pokusu
     pocet_pokusu += 1
-    cows = 0
-    bulls = 0
+    cows = 0   # uhodnute cislo, ne umisteni
+    bulls = 0  # uhodnute cislo i umisteni
     pokus = input(">>> ")
     if len(pokus) != 4 or len(pokus) > len(set(pokus)) or int(pokus[0]) == 0:
         print("Wrong input! Your number has to have 4 digit, each digit has to be different and cannot start with 0")
@@ -66,3 +53,18 @@ def hrat_hru():
                 print("Good job!")
             else:
                 print("It could be better :)")
+    if bulls != 4:
+        hrat_hru()
+
+# Zacatek programu
+print(
+    "Hi there!" +
+    "\n" + oddelovac +
+    "\n" + "I've generated a random 4 digit number for you." +
+    "\n" + "Let's play a bulls and cows game."
+    "\n" + oddelovac
+)
+print("Enter a number: .... (4 digit, each digit has to be different, cannot start with 0)")
+
+generuj_cislo()
+hrat_hru()
