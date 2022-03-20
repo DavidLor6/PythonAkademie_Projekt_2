@@ -20,6 +20,16 @@ def generuj_cislo():
         cislo.clear()
         generuj_cislo()
 
+# Zacatek programu
+print(
+    "Hi there!" +
+    "\n" + oddelovac +
+    "\n" + "I've generated a random 4 digit number for you." +
+    "\n" + "Let's play a bulls and cows game."
+    "\n" + oddelovac
+)
+print("Enter a number: .... (4 digit, each digit has to be different, cannot start with 0)")
+
 def hrat_hru():
     global pocet_pokusu
     pocet_pokusu += 1
@@ -44,17 +54,15 @@ def hrat_hru():
         print(f"{bulls} bull, {cows} cows")
     else:
         print(f"{bulls} bulls, {cows} cows")
-
-
-
-
-# Zacatek programu
-print(
-    "Hi there!" +
-    "\n" + oddelovac +
-    "\n" + "I've generated a random 4 digit number for you." +
-    "\n" + "Let's play a bulls and cows game."
-    "\n" + oddelovac
-)
-print("Enter a number: .... (4 digit, each digit has to be different, cannot start with 0)")
-hrat_hru()
+    if bulls == 4:
+        if pocet_pokusu <= 1:
+            print(f"Correct, you've guessed the right number in {pocet_pokusu} guess!")
+            print(oddelovac)
+            print("It is amazing!")
+        else:
+            print(f"Correct, you've guessed the right number in {pocet_pokusu} guesses!")
+            print(oddelovac)
+            if pocet_pokusu < 10:
+                print("Good job!")
+            else:
+                print("It could be better :)")
