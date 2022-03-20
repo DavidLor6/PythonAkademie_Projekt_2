@@ -4,9 +4,9 @@
 import random
 
 # definovani promennych
-oddelovac = "-" * 47
+oddelovac = "-" * 100
 cislo = []
-pocet_pokusu = []
+pocet_pokusu = 0
 
 # vytvoreni hadaneho cisla
 def generuj_cislo():
@@ -25,12 +25,12 @@ def hrat_hru():
     pokus = input(">>> ")
     if len(pokus) != 4 or len(pokus) > len(set(pokus)) or int(pokus[0]) == 0:
         print("Wrong input! Your number has to have 4 digit, each digit has to be different and cannot start with 0")
-        hrat_hru()
+        #hrat_hru()
     for i in range(4):
         if int(pokus[i]) == int(cislo[i]):
             bulls += 1
     for j in range(4):
-        if int(pokus[j]) in int(cislo):
+        if int(pokus[j]) in cislo:
             cows +=1
     cows = cows - bulls
     if bulls <= 1 and cows <= 1:
@@ -65,6 +65,6 @@ print(
     "\n" + oddelovac
 )
 print("Enter a number: .... (4 digit, each digit has to be different, cannot start with 0)")
-
 generuj_cislo()
+print(cislo)
 hrat_hru()
