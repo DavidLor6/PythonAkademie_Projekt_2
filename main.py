@@ -25,36 +25,37 @@ def hrat_hru():
     pokus = input(">>> ")
     if len(pokus) != 4 or len(pokus) > len(set(pokus)) or int(pokus[0]) == 0:
         print("Wrong input! Your number has to have 4 digit, each digit has to be different and cannot start with 0")
-        #hrat_hru()
-    for i in range(4):
-        if int(pokus[i]) == int(cislo[i]):
-            bulls += 1
-    for j in range(4):
-        if int(pokus[j]) in cislo:
-            cows +=1
-    cows = cows - bulls
-    if bulls <= 1 and cows <= 1:
-        print(f"{bulls} bull, {cows} cow")
-    elif bulls >= 1 and cows <= 1:
-        print(f"{bulls} bulls, {cows} cow")
-    elif bulls <= 1 and cows >= 1:
-        print(f"{bulls} bull, {cows} cows")
-    else:
-        print(f"{bulls} bulls, {cows} cows")
-    if bulls == 4:
-        if pocet_pokusu <= 1:
-            print(f"Correct, you've guessed the right number in {pocet_pokusu} guess!")
-            print(oddelovac)
-            print("It is amazing!")
-        else:
-            print(f"Correct, you've guessed the right number in {pocet_pokusu} guesses!")
-            print(oddelovac)
-            if pocet_pokusu < 10:
-                print("Good job!")
-            else:
-                print("It could be better :)")
-    if bulls != 4:
         hrat_hru()
+    else:
+        for i in range(4):
+            if int(pokus[i]) == int(cislo[i]):
+                bulls += 1
+        for j in range(4):
+            if int(pokus[j]) in cislo:
+                cows +=1
+        cows = cows - bulls
+        if bulls <= 1 and cows <= 1:
+            print(f"{bulls} bull, {cows} cow")
+        elif bulls >= 1 and cows <= 1:
+            print(f"{bulls} bulls, {cows} cow")
+        elif bulls <= 1 and cows >= 1:
+            print(f"{bulls} bull, {cows} cows")
+        else:
+            print(f"{bulls} bulls, {cows} cows")
+        if bulls == 4:
+            if pocet_pokusu <= 1:
+                print(f"Correct, you've guessed the right number in {pocet_pokusu} guess!")
+                print(oddelovac)
+                print("It is amazing!")
+            else:
+                print(f"Correct, you've guessed the right number in {pocet_pokusu} guesses!")
+                print(oddelovac)
+                if pocet_pokusu < 10:
+                    print("Good job!")
+                else:
+                    print("It could be better :)")
+        if bulls != 4:
+            hrat_hru()
 
 # Zacatek programu
 print(
