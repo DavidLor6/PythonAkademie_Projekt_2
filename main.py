@@ -68,5 +68,4 @@ print(
 )
 print("Enter a number: .... (4 digit, each digit has to be different, cannot start with 0)")
 generuj_cislo()
-print(cislo)
 hrat_hru()
