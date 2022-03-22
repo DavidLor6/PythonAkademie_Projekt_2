@@ -1,4 +1,4 @@
-# Python Akademie - 2.projekt --- Bull & Cows
+# Python Akademie - 2.projekt --- Bulls & Cows --- David Lorenc
 
 # import knihoven
 import random
@@ -17,6 +17,7 @@ def generuj_cislo():
         cislo.clear()
         generuj_cislo()
 
+# funkce pro hrani hry
 def hrat_hru():
     global pocet_pokusu
     pocet_pokusu += 1
